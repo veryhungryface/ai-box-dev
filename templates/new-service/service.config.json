@@ -1,0 +1,39 @@
+{
+  "serviceName": "example-service",
+  "serviceLabel": "예시 서비스",
+  "serviceKey": "EXAMPLE_SERVICE",
+  "serviceIndex": 17,
+  "serviceUUID": "auto-generate",
+  "socket": false,
+  "targetCodebase": "c:\\nas\\nas",
+  
+  "fileMappings": {
+    "web-app/screens/": "apps/web-app/src/screens/Aibox/",
+    "web-app/constants/": "apps/web-app/src/constants/AiBox/services/",
+    "web-app/clients/": "apps/web-app/src/clients/AiBox/",
+    "web-app/app/": "apps/web-app/src/app/(main)/ai-box/{service-id}/",
+    
+    "tool-service/routes/": "apps/tool-service/src/routes/AiBox/",
+    "tool-service/services/": "apps/tool-service/src/services/AiBox/",
+    "tool-service/prompts/": "apps/tool-service/src/prompts/templates/AiBox/"
+  },
+  
+  "registrations": [
+    {
+      "file": "apps/tool-service/src/services/services.ts",
+      "action": "add-service"
+    },
+    {
+      "file": "apps/tool-service/src/routes/aiBoxRouterConfig.ts",
+      "action": "add-router"
+    },
+    {
+      "file": "apps/web-app/src/clients/ToolApiClient.ts",
+      "action": "add-api"
+    },
+    {
+      "file": "apps/web-app/src/constants/menuItems.ts",
+      "action": "add-menu-item"
+    }
+  ]
+}
